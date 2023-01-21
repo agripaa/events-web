@@ -1,0 +1,25 @@
+{
+  "name": "event-info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --ignore index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "argon2": "^0.30.3",
+    "connect-session-sequelize": "^7.1.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "mysql2": "^3.0.1",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.28.0"
+  }
+}
