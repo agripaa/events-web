@@ -56,8 +56,8 @@ const User = db.define('user', {
     }
 },{freezTableName: true});
 
-(async () => {
-    db.sync();
-})();
+// (async () => {
+//     db.sync();
+// })();
 
 module.exports = User;

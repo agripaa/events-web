@@ -1,7 +1,22 @@
-GET http://localhost:5000/users
+GET http://localhost:5000/users/
 
 ###
-GET http://localhost:5000/users/2
+GET http://localhost:5000/users/2/
 
 ###
 GET http://localhost:5000/events/
+
+### authentication 
+GET http://localhost:5000/profile/
+
+###
+POST http://localhost:5000/login/
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin12"
+}
+
+###
+DELETE http://localhost:5000/logout/

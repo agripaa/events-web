@@ -1,9 +1,8 @@
 const {Sequelize} = require('sequelize');
 
-const db = new Sequelize('events','root', '', {
+const db = new Sequelize('events-info','root', '', {
     dialect: 'mysql',
-    host: 'localhost',
-    logging: (...msg) => console.log(msg)
+    host: 'localhost'
 });
 
 module.exports = db;
@@ -13,5 +12,4 @@ try {
     console.log('connection has been established');
 } catch (err) {
     console.error(err);
-    
 }

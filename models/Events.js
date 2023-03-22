@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes }  = require('sequelize');
 const db = require('../config/database');
+const User = require('./Users');
 
 const Events = db.define('event', {
     uuid:{
@@ -23,7 +24,6 @@ const Events = db.define('event', {
         allowNull: false,
         validate: {
             notEmpty: true,
-            isEmail: true
         }
     },
     date:{
@@ -33,7 +33,7 @@ const Events = db.define('event', {
             notEmpty: true
         }
     },
-    regirster:{
+    register:{
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -75,10 +75,20 @@ const Events = db.define('event', {
             notEmpty: true,
         }
     },
+    userId : {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        }
+    },
 },{freezTableName: true});
 
-(async () => {
-    db.sync();
-})();
+User.hasMany(Events);
+Events.belongsTo(User, {foreignKey: 'userId'});
+
+// (async () => {
+//     db.sync();
+// })();
 
 module.exports = Events;

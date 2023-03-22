@@ -17,7 +17,7 @@ async function getDatas(req, res) {
 
 async function getDataById(req, res) {
     try {
-        const result = await User.findAll({
+        const result = await User.findOne({
             attributes: ['uuid', 'name', 'email', 'password', 'image', 'url', 'role'],
             where: {
                 uuid: req.params.id
@@ -75,9 +75,9 @@ async function createData(req, res) {
 async function updateData(req, res) {
     let fileName, hashPassword;
     const files = req.files;
-    const { name, email, password, confPassword, role} = req.body;
+    const { name, email, password, confPassword, role } = req.body;;
 
-    const user = await User.findOne({where: {uuid: req.params.id}})
+    const user = await User.findOne({where: {uuid: req.params.id}});
     if(!user) return res.status(404).json({status:404, msg: 'User not found'});
 
     if(password === null || password === ""){

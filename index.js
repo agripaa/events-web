@@ -6,6 +6,7 @@ const fileUpload = require('express-fileupload');
 const db = require('./config/database');
 const Users = require('./routes/Users');
 const Events = require('./routes/Events');
+const Auth = require('./routes/Auth');
 require('dotenv').config();
 const app = express();
 
@@ -33,6 +34,7 @@ app.use(express.static("public"));
 
 app.use(express.json());
 app.use(fileUpload());
+app.use(Auth);
 app.use(Users);
 app.use(Events);
 
